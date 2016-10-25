@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Kurkku-156</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="app.min.css">
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <script>
+        // Select your KURKKUSERVER
+        //var KURKKUSERVER = 'https://KURKKUserver-stage.herokuapp.com';
+        var KURKKUSERVER = 'https://KURKKUserver.herokuapp.com';
+        //var KURKKUSERVER = 'http://localhost:3000';
+
+        // Initialize Firebase
+        // Stage
+        var firebaseStageConfig = {
+            apiKey: "AIzaSyCzHxuOJr7QXiPsP_TgdNtimNN0cUMEr-M",
+            authDomain: "kurkku-156.firebaseapp.com",
+            databaseURL: "https://kurkku-156.firebaseio.com",
+            storageBucket: "kurkku-156.appspot.com",
+            messagingSenderId: "394543719439"
+        };
+        // PROD
+        var firebaseProdConfig = {
+            apiKey: "AIzaSyCzHxuOJr7QXiPsP_TgdNtimNN0cUMEr-M",
+            authDomain: "kurkku-156.firebaseapp.com",
+            databaseURL: "https://kurkku-156.firebaseio.com",
+            storageBucket: "kurkku-156.appspot.com",
+            messagingSenderId: "394543719439"
+        };
+
+        //----------------------------------------
+        //SELECT THE FIREBASE instance
+        //----------------------------------------
+        //firebase.initializeApp(firebaseStageConfig);
+        firebase.initializeApp(firebaseProdConfig);
+        //----------------------------------------
+    </script>
+
+    <script src="app.min.js"></script>
+</body>
+
+</html>
