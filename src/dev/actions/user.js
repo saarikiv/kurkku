@@ -24,6 +24,12 @@ var UserRef;
 var TransactionsRef;
 var BookingsRef;
 
+export function newCase ( caseDetails ){
+    return dispatch => {
+        console.log("NEW case");
+    }
+}
+
 export function sendFeedback(feedback){
   return dispatch => {
     //for diagnostics

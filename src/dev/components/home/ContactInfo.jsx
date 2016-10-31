@@ -6,8 +6,10 @@ export default class ContactInfo extends React.Component {
       <div class="container contact-container">
         <div className="content-container centered">
           <h2 class="contact-heading">Yhteystiedot</h2>
-          <p class="contact-info">Hakolahdentie 2</p>
-          <p class="contact-info">(tulossa)</p>
+          <p class="contact-info">Kurkunleikkaajan saari 45</p>
+          <p class="contact-info">56789 Madagasgar</p>
+          <p class="contact-info">Puhelin: on</p>
+          <p class="contact-info">Sähköposti: on</p>
         </div>
       </div>
     );
