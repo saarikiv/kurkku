@@ -27,6 +27,12 @@ var BookingsRef;
 export function newCase ( caseDetails ){
     return dispatch => {
         console.log("NEW case");
+        firebase.database().ref('/newCases').push(
+            {
+                caseStatus: 'NEW',
+                caseDetails: caseDetails
+            }
+        )
     }
 }
 

@@ -39,7 +39,15 @@ class NewCase extends React.Component {
 
   onSubmit(props){
     console.log("ON SUBMIT");
-    let caseDetails = {}
+    let caseDetails = {
+      type: props.caseType,
+      description: props.caseDescription,
+      additionalInfo: props.additionalInfo,
+      contactName: props.contactName,
+      contactPhone: props.contactPhone,
+      contactEmail: props.contactEmail,
+      startDate: this.startDate.toISOString()
+    }
     this.props.actions.newCase(caseDetails)
     this.context.router.push('/')
   }

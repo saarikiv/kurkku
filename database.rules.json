@@ -1,74 +1,44 @@
 {
     "rules": {
         "users": {
-            ".read": "auth.uid === 'KURKKUserver' || root.child('specialUsers').child(auth.uid).child('admin').val() == true || root.child('specialUsers').child(auth.uid).child('instructor').val() == true",
-            ".write": "auth.uid === 'KURKKUserver'  || root.child('specialUsers').child(auth.uid).child('admin').val() == true || root.child('specialUsers').child(auth.uid).child('instructor').val() == true",
+            ".read": "auth.uid === 'KurkkuServer' || root.child('specialUsers').child(auth.uid).child('admin').val() == true || root.child('specialUsers').child(auth.uid).child('instructor').val() == true",
+            ".write": "auth.uid === 'KurkkuServer'  || root.child('specialUsers').child(auth.uid).child('admin').val() == true || root.child('specialUsers').child(auth.uid).child('instructor').val() == true",
             "$userId": {
                 ".read": "auth.uid === $userId || root.child('specialUsers').child(auth.uid).child('instructor').val() == true",
                 ".write": "auth.uid === $userId"
             }
         },
-        "cancelledSlots": {
-            ".read": "auth != null",
-            ".write": "auth.uid === 'KURKKUserver' || root.child('specialUsers').child(auth.uid).child('instructor').val() == true"
-        },
         "infoItems": {
             ".read": "true",
-            ".write": "auth.uid === 'KURKKUserver' || root.child('specialUsers').child(auth.uid).child('admin').val() == true"
+            ".write": "auth.uid === 'KurkkuServer' || root.child('specialUsers').child(auth.uid).child('admin').val() == true"
+        },
+        "newCases": {
+            ".read": "auth != null",
+            ".write": "true"
         },
         "diagnostics": {
-            ".read": "auth.uid === 'KURKKUserver' || root.child('specialUsers').child(auth.uid).child('admin').val() == true",
+            ".read": "auth.uid === 'KurkkuServer' || root.child('specialUsers').child(auth.uid).child('admin').val() == true",
             ".write": "true"
         },
         "terms": {
             ".read": "true",
-            ".write": "auth.uid === 'KURKKUserver' || root.child('specialUsers').child(auth.uid).child('admin').val() == true"
-        },
-        "bookingsbyslot": {
-            ".read": "auth != null",
-            ".write": "auth.uid === 'KURKKUserver'"
-        },
-        "scbookingsbyslot": {
-            ".read": "auth != null",
-            ".write": "auth.uid === 'KURKKUserver'"
+            ".write": "auth.uid === 'KurkkuServer' || root.child('specialUsers').child(auth.uid).child('admin').val() == true"
         },
         "specialUsers": {
-            ".read": "auth.uid === 'KURKKUserver' || root.child('specialUsers').child(auth.uid).child('admin').val() == true || root.child('specialUsers').child(auth.uid).child('instructor').val() == true",
-            ".write": "auth.uid === 'KURKKUserver' || root.child('specialUsers').child(auth.uid).child('admin').val() == true || root.child('specialUsers').child(auth.uid).child('instructor').val() == true",
+            ".read": "auth.uid === 'KurkkuServer' || root.child('specialUsers').child(auth.uid).child('admin').val() == true || root.child('specialUsers').child(auth.uid).child('instructor').val() == true",
+            ".write": "auth.uid === 'KurkkuServer' || root.child('specialUsers').child(auth.uid).child('admin').val() == true || root.child('specialUsers').child(auth.uid).child('instructor').val() == true",
             "$userId": {
-                ".read": "auth.uid === 'KURKKUserver' || auth.uid === $userId",
-                ".write": "auth.uid === 'KURKKUserver' || root.child('specialUsers').child(auth.uid).child('admin').val() == true"
+                ".read": "auth.uid === 'KurkkuServer' || auth.uid === $userId",
+                ".write": "auth.uid === 'KurkkuServer' || root.child('specialUsers').child(auth.uid).child('admin').val() == true"
             }
-        },
-        "scbookingsbyuser": {
-            "$userId": {
-                ".read": "auth.uid === 'KURKKUserver' || auth.uid === $userId",
-                ".write": "auth.uid === 'KURKKUserver'"
-            }
-        },
-        "bookingsbyuser": {
-            "$userId": {
-                ".read": "auth.uid === 'KURKKUserver' || auth.uid === $userId",
-                ".write": "auth.uid === 'KURKKUserver'"
-            }
-        },
-        "transactions": {
-            "$userId": {
-                ".read": "auth.uid === 'KURKKUserver' || auth.uid === $userId || root.child('specialUsers').child(auth.uid).child('admin').val() == true || root.child('specialUsers').child(auth.uid).child('instructor').val() == true",
-                ".write": "auth.uid === 'KURKKUserver'"
-            }
-        },
-        "pendingtransactions": {
-            ".read": "auth.uid === 'KURKKUserver' || root.child('specialUsers').child(auth.uid).child('admin').val() == true",
-            ".write": "auth.uid === 'KURKKUserver' || root.child('specialUsers').child(auth.uid).child('admin').val() == true"
         },
         "slotTypes": {
             ".read": "auth != null",
             ".write": "root.child('specialUsers').child(auth.uid).child('admin').val() == true"
         },
         "serverError": {
-            ".read": "auth.uid === 'KURKKUserver'",
-            ".write": "auth.uid === 'KURKKUserver'"
+            ".read": "auth.uid === 'KurkkuServer'",
+            ".write": "auth.uid === 'KurkkuServer'"
         },
         "slots": {
             ".read": "auth != null",
@@ -79,14 +49,6 @@
             ".write": "root.child('specialUsers').child(auth.uid).child('admin').val() == true"
         },
         "places": {
-            ".read": "auth != null",
-            ".write": "root.child('specialUsers').child(auth.uid).child('admin').val() == true"
-        },
-        "instructors": {
-            ".read": "auth != null",
-            ".write": "root.child('specialUsers').child(auth.uid).child('admin').val() == true"
-        },
-        "shopItems": {
             ".read": "auth != null",
             ".write": "root.child('specialUsers').child(auth.uid).child('admin').val() == true"
         }
