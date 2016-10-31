@@ -6,9 +6,9 @@ import { connect } from 'react-redux'
 import * as userActionCreators from '../actions/user.js'
 import * as lsActionCreators from '../actions/loadingScreen.js'
 
-import Timetable from '../components/user/Timetable.jsx'
-import SlotInfo from '../components/user/SlotInfo.jsx'
-import TimetableHeader from '../components/user/TimetableHeader.jsx'
+import CaseTable from '../components/user/CaseTable.jsx'
+import CaseInfo from '../components/user/CaseInfo.jsx'
+import CaseTableHeader from '../components/user/CaseTableHeader.jsx'
 
 
 
@@ -44,9 +44,9 @@ class User extends React.Component {
     if( this.userFullyLoaded ) {
         return (
             <div>
-              <TimetableHeader />
-              <Timetable/>              
-              <SlotInfo />              
+              <CaseTableHeader />
+              <CaseTable/>              
+              <CaseInfo />              
             </div>
           );
       } else {

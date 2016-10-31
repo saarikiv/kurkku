@@ -12,7 +12,7 @@ import AuthReducer from './authReducer.js'
 import UserReducer from './userReducer.js'
 import InfoReducer from './infoReducer.js'
 import TermsListReducer from './admin/termsReducer.js'
-import SlotInfoReducer from './slotInfoReducer.js'
+import CaseInfoReducer from './slotInfoReducer.js'
 import UserListReducer from './admin/userListReducer.js'
 import AdminListReducer from './admin/adminListReducer.js'
 import SlotListReducer from './admin/slotListReducer.js'
@@ -36,7 +36,7 @@ const combinedReducer = combineReducers({
     timetable: TimetableReducer,
     auth: AuthReducer,
     form: FormReducer,
-    slotInfo: SlotInfoReducer,
+    slotInfo: CaseInfoReducer,
     userList: UserListReducer,
     adminList: AdminListReducer,
     slotList: SlotListReducer,

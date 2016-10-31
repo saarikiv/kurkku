@@ -4,11 +4,11 @@ import { connect } from 'react-redux'
 import { Link } from "react-router"
 
 import { getSlotTimeLocal, sameDay, hasDayPassed, hasTimePassed, timeToMoment, getDayStrMs, getTimeStrMs, getDayStr, getTimeStr } from '../../helpers/timeHelper.js'
-import {removeSlotInfo} from '../../actions/slots.js'
+import {removeCaseInfo} from '../../actions/slots.js'
 import * as bookingsActionCreators from '../../actions/bookings.js'
 import UserList from '../admin/UserList.jsx'
 
-class SlotInfo extends React.Component {
+class CaseInfo extends React.Component {
 
   constructor(){
     super();
@@ -63,7 +63,7 @@ class SlotInfo extends React.Component {
   }
 
   exitContainer() {
-    this.props.slotActions.removeSlotInfo()
+    this.props.slotActions.removeCaseInfo()
     this.reservationRequestOngoing = false;
     this.cancellationOngoing = false;
     this.confirmation = false;
@@ -169,8 +169,8 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { slotActions: bindActionCreators({removeSlotInfo}, dispatch),
+  return { slotActions: bindActionCreators({removeCaseInfo}, dispatch),
            bookingsActions: bindActionCreators(bookingsActionCreators, dispatch)}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SlotInfo)
+export default connect(mapStateToProps, mapDispatchToProps)(CaseInfo)

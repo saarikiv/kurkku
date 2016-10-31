@@ -6,15 +6,9 @@ import { connect } from 'react-redux'
 import * as authActionCreators from '../../actions/auth.js'
 import * as userActionCreators from '../../actions/user.js'
 import {getDayStr,getTimeStr} from '../../helpers/timeHelper.js'
-import Tickets from './Tickets.jsx'
 
 class TopBar extends React.Component {  
 
-  renderTickets() {
-    return (
-      <Tickets curUsr={this.props.curUsr} />
-    )
-  }
 
   componentWillMount() {
     this.setState({navOpen: false})
@@ -26,12 +20,10 @@ class TopBar extends React.Component {
       this.setState({navOpen: false})
       document.getElementById("nav-btn").classList.remove("mobile-hidden")
       document.getElementById("nav-menu").classList.add("mobile-hidden")
-      document.getElementById("tickets-info").classList.add("mobile-hidden")
     } else {
       this.setState({navOpen: true})
       document.getElementById("nav-btn").classList.add("mobile-hidden")
       document.getElementById("nav-menu").classList.remove("mobile-hidden")
-      document.getElementById("tickets-info").classList.remove("mobile-hidden")
     }
     */
   }
@@ -71,7 +63,6 @@ class TopBar extends React.Component {
             <img src="./assets/nav.png" className="nav-btn align-right mobile-hidden desktop-hidden" id="nav-btn" alt="navigation" onClick={() => this.toggleNav()}/>
           </div>
           <div className="content-container">
-            {this.renderTickets()}
             <div className="userinfo-container" id="nav-menu">
               <div className="mobile-row">
                 <a className="text-link text-fade" onClick={this.handleLogout.bind(this)}>Kirjaudu ulos</a>
@@ -88,10 +79,9 @@ class TopBar extends React.Component {
             <img src="./assets/nav.png" className="nav-btn align-right mobile-hidden desktop-hidden" id="nav-btn" alt="navigation" onClick={() => this.toggleNav()}/>
           </div>
           <div className="content-container">
-            {this.renderTickets()}
             <div className="userinfo-container" id="nav-menu">
               <div className="mobile-row">
-                <Link className="text-link" to="user" onClick={() => this.toggleNav()}>Varaukset</Link>
+                <Link className="text-link" to="user" onClick={() => this.toggleNav()}>Uudet pyynnöt</Link>
               </div>
               <div className="mobile-row">
                 {admin}
@@ -100,13 +90,7 @@ class TopBar extends React.Component {
                 {userOverview}
               </div>
               <div className="mobile-row">
-                {tests}
-              </div>
-              <div className="mobile-row">
                 {diagnostics}
-              </div>
-              <div className="mobile-row">
-                <Link className="text-link text-green" to="shop" onClick={() => this.toggleNav()}>Kauppa</Link>
               </div>
               <div className="mobile-row">
                 <Link className="text-link text-fade" to="userProfile" onClick={() => this.toggleNav()}>Omat tiedot</Link>

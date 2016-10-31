@@ -76,7 +76,7 @@ export function _fetchTimetable(dispatch) {
     })
 }
 
-export function putSlotInfo(slot, booking) {
+export function putCaseInfo(slot, booking) {
     return dispatch => {
         dispatch({
             type: PUT_SLOT_INFO,
@@ -91,13 +91,13 @@ export function putSlotInfo(slot, booking) {
     }
 }
 
-export function flagSlotInfoToExit(){
+export function flagCaseInfoToExit(){
     return {
         type: FLAG_SLOT_INFO_TO_EXIT
     }
 }
 
-export function removeSlotInfo() {
+export function removeCaseInfo() {
     return {
         type: REMOVE_SLOT_INFO
     }

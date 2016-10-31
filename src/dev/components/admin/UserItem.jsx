@@ -26,7 +26,7 @@ class UserItem extends React.Component {
     if(!this.lateReservationOngoing){
       this.lateReservationOngoing = true;
       this.props.bookingActions.postLateReservation(this.props.item.uid, 0, this.props.slotInfo)
-      this.props.slotActions.flagSlotInfoToExit()
+      this.props.slotActions.flagCaseInfoToExit()
     }
   }
 

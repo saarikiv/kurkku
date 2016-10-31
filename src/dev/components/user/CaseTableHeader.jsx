@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import ReservationItem from './ReservationItem.jsx'
 
-class TimetableHeader extends React.Component {
+class CaseTableHeader extends React.Component {
 
   renderBookings(item){
     return(<ReservationItem className="centered" key={item.slotInfo.key} item={item.slotInfo}/> )
@@ -22,9 +22,8 @@ class TimetableHeader extends React.Component {
     return (
       <div class="container header-container">
         <div className="content-container">
-          <h1 className="nomargin nopadding">Varaukset</h1>
-          <small className="text-fade margin-top margin-bottom small-info">Tästä voit varata saunavuorosi. Vuoroja voi varata aina viikoksi eteenpäin.</small>
-          {currentReservations}
+          <h1 className="nomargin nopadding">Remonttipyynnöt</h1>
+          <small className="text-fade margin-top margin-bottom small-info">Tästä voit katsella avoimia pyyntöjä.</small>
           <table>
             <tbody>
                 {bookings.map(this.renderBookings.bind(this))}
@@ -40,4 +39,4 @@ function mapStateToProps(state) {
   return { auth: state.auth, currentUser: state.currentUser}
 }
 
-export default connect(mapStateToProps, null)(TimetableHeader)
+export default connect(mapStateToProps, null)(CaseTableHeader)

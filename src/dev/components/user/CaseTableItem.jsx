@@ -2,16 +2,16 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import {getTimeStrMsBeginnignOfDay} from '../../helpers/timeHelper.js'
-import { putSlotInfo } from '../../actions/slots.js'
+import { putCaseInfo } from '../../actions/slots.js'
 import * as bookingsActionCreators from '../../actions/bookings.js'
 
-class TimeTableItem extends React.Component {
+class CaseTableItem extends React.Component {
 
   componentWillReceiveProps(nextProps){
     if(this.props.slotInfo.key !== "0"){ //Pop-up is active and CI-props need to be updated
       //But only if bookings information has changed.
       if(this.props.booking !== nextProps.booking){
-        this.props.slotActions.putSlotInfo(nextProps.item, nextProps.booking)
+        this.props.slotActions.putCaseInfo(nextProps.item, nextProps.booking)
       }
     }
   }
@@ -25,7 +25,7 @@ class TimeTableItem extends React.Component {
   }
 
   itemClicked() {
-    this.props.slotActions.putSlotInfo(this.props.item, this.props.booking)
+    this.props.slotActions.putCaseInfo(this.props.item, this.props.booking)
   }
 
   render() {
@@ -72,8 +72,8 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { slotActions: bindActionCreators({putSlotInfo}, dispatch),
+  return { slotActions: bindActionCreators({putCaseInfo}, dispatch),
            bookingsActions: bindActionCreators(bookingsActionCreators, dispatch)}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TimeTableItem)
+export default connect(mapStateToProps, mapDispatchToProps)(CaseTableItem)
